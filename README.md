@@ -18,7 +18,6 @@ CREATE TABLE {token_table} (
 ## py服务配置
 ### 安装SDK
 #### 云服务安装sdk
-P.S：https://console.cloud.tencent.com/scf/list?rid=16&ns=default
 1. 先创建一个Django模板云函数，创建完毕后从git拉取项目，进入项目目录后执行python cloudDeployment.py
 2. 进入djangodemo，打开settings.py，将第46行`'django.middleware.csrf.CsrfViewMiddleware'`注释掉
 3. 回到src目录
