@@ -1,4 +1,7 @@
-# ms-Auth
+# Serverless-Auth
+轻量级邮件验证码注册登录+token鉴权服务，支持两种鉴权模式
+* 公钥原地鉴权：token+签发时间用私钥加密，外部服务用公钥解密即可原地验证（`check_token_by_rsa`复制过去）
+* 数据库鉴权：通过本服务的`check_token_by_sql`接口，本服务查询数据库验证
 
 ## 数据库
 ### 网络配置
@@ -11,7 +14,6 @@ CREATE TABLE {token_table} (
     expiration_time TIMESTAMP NOT NULL  -- 过期时间字段，不带时区信息的TIMESTAMP
 );
 ```
-AIhuman和taskWorld有两个参数不同，具体看下面
 
 ## py服务配置
 ### 安装SDK
