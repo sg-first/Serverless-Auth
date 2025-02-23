@@ -109,7 +109,7 @@ def generate_verify_code(email):
     encrypted = cipher.encrypt(pad(raw_data, AES.block_size))
     encrypted = base64.b64encode(encrypted).decode('ascii')
     # 取encrypted的第1，3，5位，与encrypted的最后三位拼起来
-    code = encrypted[0] + encrypted[2] + encrypted[4] + encrypted[-3:]
+    code = (encrypted[0] + encrypted[2] + encrypted[4] + encrypted[-4:-1]).upper()
     return code
     
 
